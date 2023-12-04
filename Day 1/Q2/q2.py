@@ -1,10 +1,10 @@
 file_path = "./q2.txt"
+
 with open(file_path, "r") as file:
-    lst = file.readlines()
+    lines = file.readlines()
 
 total = 0
 dict = {
-    "zero": 0,
     "one": 1,
     "two": 2,
     "three": 3,
@@ -16,17 +16,20 @@ dict = {
     "nine": 9,
 }
 
-cnt = 1
-for i in lst:
+
+for line in lines:
+    lst = line.split()
     s = []
-    for j in range(0, len(i)):
-        if i[j].isdigit():
-            s.append(i[j])
+
+    for i in lst:
+        if i in dict:
+            s.append(str(dict[i]))
         else:
-            for n in range(j + 1, len(i)):
-                if i[j:n] in dict:
-                    s.append(str(dict[i[j:n]]))
-    print(cnt, s)
-    cnt = cnt + 1
-    total += int(s[0]) + int(s[-1])
+            for j in i:
+                if j.isdigit():
+                    s.append(j)
+
+    if s:
+        total += int(s[0] + s[-1])
+
 print("Total =", total)
