@@ -16,19 +16,17 @@ dict = {
     "nine": 9,
 }
 
-
+cnt = 1
 for i in lst:
-    s = ""
-
+    s = []
     for j in range(0, len(i)):
         if i[j].isdigit():
-            s = s + str(i[j])
+            s.append(i[j])
         else:
-            for a in range(j + 1, len(i)):
-                if i[j:a] in dict:
-                    s += str(dict[i[j:a]])
-
-    print(s)
+            for n in range(j + 1, len(i)):
+                if i[j:n] in dict:
+                    s.append(str(dict[i[j:n]]))
+    print(cnt, s)
+    cnt = cnt + 1
     total += int(s[0]) + int(s[-1])
-
 print("Total =", total)
