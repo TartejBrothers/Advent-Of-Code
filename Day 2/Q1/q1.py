@@ -1,4 +1,4 @@
-file_path = "./q1.txt"
+file_path = "./q2.txt"
 index = 1
 numr = 0
 numg = 0
@@ -14,11 +14,14 @@ for line in data.split("\n"):
         for time in event.split(","):
             time = time.split(" ")
             if time[2] == "red":
-                numr += int(time[1])
+                if numr < int(time[1]):
+                    numr = int(time[1])
             elif time[2] == "green":
-                numg += int(time[1])
+                if numg < int(time[1]):
+                    numg = int(time[1])
             elif time[2] == "blue":
-                numb += int(time[1])
+                if numb < int(time[1]):
+                    numb = int(time[1])
     print("numr =", numr)
     print("numg =", numg)
     print("numb =", numb)
