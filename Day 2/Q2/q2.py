@@ -25,9 +25,11 @@ for line in data.split("\n"):
     print("numr =", numr)
     print("numg =", numg)
     print("numb =", numb)
-    if numb <= 14 and numg <= 13 and numr <= 12:
-        print("Added Index =", index)
-        total += int(index)
+
+    mul = 0
+    mul = numr * numg * numb
+    print("mul =", mul)
+    total += mul
     numr = 0
     numg = 0
     numb = 0
