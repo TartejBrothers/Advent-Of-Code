@@ -1,4 +1,4 @@
-file_path = "./q2.txt"
+file_path = "./q1.txt"
 index = 1
 numr = 0
 numg = 0
